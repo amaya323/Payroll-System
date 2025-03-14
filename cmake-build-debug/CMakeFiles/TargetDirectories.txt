@@ -1,0 +1,3 @@
+C:/Users/balio/Abstraction and Encapsulation/cmake-build-debug/CMakeFiles/Abstraction_and_Encapsulation.dir
+C:/Users/balio/Abstraction and Encapsulation/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/balio/Abstraction and Encapsulation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
