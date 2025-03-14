@@ -45,4 +45,5 @@ string capitalizeName(const string& name);
 // Validates if the given name contains only letters, spaces, and single apostrophes
 bool isValidName(const string& name);
 
+
 #endif // FUNCTIONS_H

@@ -4,18 +4,20 @@
 
 #ifndef COMPANY_H
 #define COMPANY_H
+
 #include "EmployeeTypes.h"
 
-
-class Company{
+// Represents a company that manages employees
+class Company {
 private:
-    vector<Employee*> employees;
+    vector<Employee*> employees; // List of employees in the company
+
 public:
+    // Constructor to initialize the company with a list of employees
     Company(vector<Employee*> employees);
 
+    // Prints a payroll report for all employees
     void printPayrollReport();
 };
 
-
-
-#endif //COMPANY_H
+#endif // COMPANY_H

@@ -9,6 +9,9 @@ Company::Company(vector<Employee *> employees) {
 
 
 void Company::printPayrollReport() {
+    if (employees.size() == 0) {
+        cout << "No employees found" << endl << endl;;
+    }
     for (auto employee : employees) {
         employee->print();
         cout << endl;

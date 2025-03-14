@@ -23,19 +23,19 @@ void getInput(string prompt, string &output) {
 // Validates if input is a positive integer
 bool validNumber(const string &input, int &output) {
     if (input.find('.') != string::npos) {
-        output = -1;
+        cout << "Error: Please enter a whole number." << endl << endl;
         return false;
     }
     for (char c: input) {
-        if (!isdigit(c)) {
-            output = -1;
+        if (!isdigit(c) && (input[0] != '-')) {
+            cout << "Error: Please enter a whole number." << endl << endl;
             return false;
         }
     }
     try {
         output = stoi(input);
         if (output <= 0) {
-            output = -1;
+            cout << "Error: Please enter a value greater than 0." << endl << endl;
             return false;
         }
         return true;
@@ -76,7 +76,7 @@ void getValidatedInput(const string &prompt, float &output, int minVal, int maxV
         if (validFloat(input, output) && output >= minVal && output <= maxVal) {
             isValid = true;
         } else {
-            cout << "Error: Invalid input. Please enter a valid value.\n";
+            cout << "Error: Invalid input." << endl << endl;
         }
     } while (!isValid);
 }
@@ -90,8 +90,6 @@ void getValidatedInput(const string &prompt, int &output, int minVal, int maxVal
         getline(cin, input);
         if (validNumber(input, output) && output >= minVal && output <= maxVal) {
             isValid = true;
-        } else {
-            cout << "Error: Invalid input. Please enter a number between " << minVal << " and " << maxVal << ".\n";
         }
     } while (!isValid);
 }
@@ -145,8 +143,12 @@ string capitalizeName(const string& name) {
 // Checks if a name is valid (letters, spaces, and apostrophes only)
 bool isValidName(const string& name) {
     string pattern = "^[A-Za-z]+(?:[' ]?[A-Za-z]+)*$";
+    if (name.empty()) {
+        return false;
+    }
+
     if (!regex_match(name, regex(pattern))) {
-        cout << "Error: Invalid Name! Only letters, spaces, and single apostrophes are allowed." << endl;
+        cout << "Error: Invalid Name! Only letters, spaces, and single apostrophes are allowed." << endl << endl;
         return false;
     }
     return true;

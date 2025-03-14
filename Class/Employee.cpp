@@ -29,7 +29,7 @@ void Employee::setIdAndName(vector <Employee*> &employees) {
         getInput("Enter employee ID: ", id);
         removeWhitespace(id);
         if (isDuplicate(employees, id)) {
-            cout << "Error: Employee ID already exists" << endl;
+            cout << "Error: Employee ID already exists" << endl << endl;
             isValid = false;
         }
         if (isValid && id.empty()) {
@@ -37,7 +37,7 @@ void Employee::setIdAndName(vector <Employee*> &employees) {
         }else{
             for (char c : id) {
                 if (!isalnum(c)) {
-                    cout << "Error: Employee ID must only contain numbers and letters" << endl;
+                    cout << "Error: Employee ID must only contain numbers and letters" << endl << endl;
                     isValid = false;
                     break;
                 }
